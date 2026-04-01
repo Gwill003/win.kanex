@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Free Cash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* canvas behind everything */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* PREMIUM BOX */
+.box{
+    width:95%;
+    max-width:390px;
+    background: rgba(15,23,42,0.9);
+    border-radius:30px;
+    padding:30px 25px;
+    text-align:center;
+    color:#fff;
+    backdrop-filter:blur(25px);
+    box-shadow:
+        0 0 60px rgba(0,0,0,0.8),
+        0 0 40px rgba(34,197,94,0.2);
+    border:1px solid rgba(255,255,255,0.08);
+    position:relative;
+    z-index:1;
+}
+
+/* glowing check */
+.success-icon{
+    width:85px;
+    height:85px;
+    background:#22c55e;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px auto;
+    box-shadow:0 0 40px rgba(34,197,94,0.9);
+}
+
+.success-icon span{
+    font-size:36px;
+    font-weight:bold;
+}
+
+h1{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.amount{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:5px;
+    text-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+.free-text{
+    font-size:24px;
+    font-weight:800;
+    background: linear-gradient(90deg,#22c55e,#34d399,#22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:12px;
+    text-shadow:0 0 25px rgba(34,197,94,0.9);
+}
+
+.instant{
+    display:inline-block;
+    background:#6d28d9;
+    padding:6px 14px;
+    border-radius:25px;
+    font-size:12px;
+    margin-bottom:15px;
+    box-shadow:0 0 15px rgba(109,40,217,0.7);
+}
+
+.features{
+    font-size:13px;
+    color:#e2e8f0;
+    margin-bottom:18px;
+    line-height:1.4;
+}
+
+.apply-btn{
+    display:block;
+    width:100%;
+    padding:16px;
+    background:linear-gradient(90deg,#22c55e,#10b981);
+    border-radius:50px;
+    font-size:15px;
+    font-weight:700;
+    color:#fff;
+    text-decoration:none;
+    box-shadow:0 0 40px rgba(34,197,94,0.9);
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+    0%{ transform:scale(1); }
+    25%{ transform:scale(1.08); }
+    40%{ transform:scale(1); }
+    60%{ transform:scale(1.08); }
+    100%{ transform:scale(1); }
+}
+
+.footer{
+    margin-top:12px;
+    font-size:10px;
+    color:#64748b;
+}
+</style>
+ </head>
+ <body>
+  <canvas id="confetti"></canvas>
+  <div class="box">
+   <div class="success-icon">
+    <span>✓</span>
+   </div>
+   <h1>Successful</h1>
+   <div class="amount">₦500,000.00</div>
+   <div class="free-text">100% FREE</div>
+   <div class="instant">INSTANT • Approved in 1.4s</div>
+   <div class="features">
+    No repayment required
+    <br>
+    Direct bank transfer
+    <br>
+    Limited time eligibility
+   </div>
+   <a href="https://blog.exambot.net/an-opportunity-to-get-paid-71000-to-relocate-to-the-usa-via-the-construction-visa-program/" class="apply-btn"> GET FREE ₦500,000 </a>
+   <div class="footer">Comment On the Post to Qualify.</div>
+  </div>
+  <script>
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+for(let i=0;i<150;i++){
+    pieces.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*-canvas.height,
+        size: Math.random()*6+4,
+        speed: Math.random()*3+2,
+        color: ["#22c55e","#34d399","#ffffff","#a78bfa"][Math.floor(Math.random()*4)]
+    });
+}
+
+function update(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+        p.y += p.speed;
+        if(p.y > canvas.height){
+            p.y = -10;
+        }
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x,p.y,p.size,p.size);
+    });
+}
+
+let animation = setInterval(update,20);
+
+/* stop confetti after 3 seconds */
+setTimeout(()=>{
+    clearInterval(animation);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+},3000);
+</script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;fa5d8290fc4442b4a066a88b8ad7818c&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+ </body>
+  </html>
