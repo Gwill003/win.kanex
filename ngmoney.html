@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Congratulations! Claim Your Reward</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+    <!-- Urgency Bar (Sticky) -->
+    <div class="urgency-bar" id="urgencyBar">
+        <div class="urgency-content">
+            <span class="urgency-icon">⚡</span>
+            <span class="urgency-text">Offer expires in <strong id="urgencyTimer">05:47</strong></span>
+            <span class="urgency-pulse"></span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- WhatsApp Header -->
+        <div class="whatsapp-header">
+            <div class="header-avatar">
+                <img src="data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23128C7E'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='18' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E" alt="Rewards Center">
+            </div>
+            <div class="header-info">
+                <div class="header-name">Rewards Center</div>
+                <div class="header-status">
+                    <span class="status-dot"></span> Online Now
+                </div>
+            </div>
+            <div class="verified-badge">✓</div>
+        </div>
+
+        <!-- Chat Background -->
+        <div class="chat-container" id="chatContainer">
+
+            <!-- Prize Hero Section (Above Fold) -->
+            <div class="prize-hero" id="prizeHero">
+                <div class="hero-badge">🎉 YOU'VE QUALIFIED!</div>
+                <h1 class="hero-title">Congratulations!</h1>
+                <div class="prize-image-wrapper">
+                    <img src="data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='200' rx='20' fill='%23f0f0f0'/%3E%3Ctext x='100' y='95' text-anchor='middle' fill='%2300a884' font-size='48'%3E💵%3C/text%3E%3Ctext x='100' y='130' text-anchor='middle' fill='%23666' font-size='16' font-family='Arial'%3ECASH PRIZE%3C/text%3E%3C/svg%3E" alt="Cash Prize" class="prize-image" id="prizeImage">
+                </div>
+                <div class="prize-value" id="prizeValue">$500</div>
+                <p class="hero-subtitle">Today you have a chance to win an exclusive reward!</p>
+
+                <div class="social-proof">
+                    <div class="proof-item">
+                        <span class="proof-number" id="claimedToday">2,847</span>
+                        <span class="proof-label">Claimed Today</span>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <span class="proof-number">4.8★</span>
+                        <span class="proof-label">Rated</span>
+                    </div>
+                </div>
+
+                <button class="cta-button pulse" onclick="startChat()">
+                    <span>Claim My Reward</span>
+                    <span class="cta-arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div class="messages-wrapper" id="messagesWrapper" style="display: none;">
+
+                <!-- Time Bubble -->
+                <div class="time-bubble">Just now</div>
+
+                <!-- Message 1 -->
+                <div class="message message-in" id="msg1" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            Hi there! 👋 Congratulations on qualifying for your <span id="msg1Prize">$500</span>!
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Message 2 -->
+                <div class="message message-in" id="msg2" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            We just need to confirm you're eligible. This will only take 2 simple questions... ✅
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Message 3 - Question 1 -->
+                <div class="message message-in" id="msg3" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            <strong>Question 1 of 2:</strong><br><br>
+                            Is this your first time here?
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                    <div class="quick-replies" id="q1Buttons">
+                        <button class="quick-reply" onclick="answerQuestion(1, 'yes')">✓ Yes</button>
+                        <button class="quick-reply" onclick="answerQuestion(1, 'no')">✗ No</button>
+                    </div>
+                </div>
+
+                <!-- User Answer 1 -->
+                <div class="message message-out" id="answer1" style="display: none;">
+                    <div class="message-bubble message-bubble-out">
+                        <div class="message-text">Yes</div>
+                        <div class="message-time">Now ✓</div>
+                    </div>
+                </div>
+
+                <!-- Message 4 - Progress -->
+                <div class="message message-in" id="msg4" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            Perfect! ✨ One more question...
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Message 5 - Question 2 -->
+                <div class="message message-in" id="msg5" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            <strong>Question 2 of 2:</strong><br><br>
+                            Are you a resident of United States?
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                    <div class="quick-replies" id="q2Buttons">
+                        <button class="quick-reply" onclick="answerQuestion(2, 'yes')">✓ Yes</button>
+                        <button class="quick-reply" onclick="answerQuestion(2, 'no')">✗ No</button>
+                    </div>
+                </div>
+
+                <!-- User Answer 2 -->
+                <div class="message message-out" id="answer2" style="display: none;">
+                    <div class="message-bubble message-bubble-out">
+                        <div class="message-text">Yes</div>
+                        <div class="message-time">Now ✓</div>
+                    </div>
+                </div>
+
+                <!-- Message 6 - Verification -->
+                <div class="message message-in" id="msg6" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            <div class="loading-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            Verifying your eligibility...
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Message 7 - Success -->
+                <div class="message message-in" id="msg7" style="display: none;">
+                    <div class="message-bubble message-success">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            🎉 <strong>CONGRATULATIONS!</strong><br><br>
+                            You've been verified and confirmed as eligible!<br><br>
+                            Your <strong id="finalPrize">$500</strong> is reserved for the next <strong><span id="finalTimer">05:00</span></strong>.
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Message 8 - Next Steps -->
+                <div class="message message-in" id="msg8" style="display: none;">
+                    <div class="message-bubble">
+                        <div class="message-sender">Rewards Center</div>
+                        <div class="message-text">
+                            <strong>📋 Next Steps:</strong><br><br>
+                            1️⃣ Click "Claim Now" below<br>
+                            2️⃣ Complete the final steps on our partners page<br>
+                            3️⃣ Your reward will be processed immediately!<br><br>
+                            <em>⚠️ Time sensitive - act now!</em>
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                </div>
+
+                <!-- Floating Progress -->
+                <div class="progress-indicator" id="progressBar" style="display: none;">
+                    <div class="progress-step completed">
+                        <div class="progress-icon">✓</div>
+                        <div class="progress-label">Qualified</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step active">
+                        <div class="progress-icon">2</div>
+                        <div class="progress-label">Verify</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <div class="progress-icon">3</div>
+                        <div class="progress-label">Claim</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- WhatsApp Input (Final CTA) -->
+        <div class="whatsapp-input" id="finalCTA" style="display: none;">
+            <button class="cta-button-final pulse" onclick="redirectToOffer()">
+                <span class="cta-icon">🎁</span>
+                <span class="cta-text">Claim My <span id="ctaPrize">$500</span> Now</span>
+                <span class="cta-arrow">→</span>
+            </button>
+            <div class="trust-badges">
+                <span class="badge">🔒 Secure</span>
+                <span class="badge">✓ Verified</span>
+                <span class="badge">⚡ Instant</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Exit Intent Modal -->
+    <div class="exit-modal" id="exitModal" style="display: none;">
+        <div class="exit-content">
+            <div class="exit-header">
+                <span class="exit-icon">⚠️</span>
+                <h2 class="exit-title">Wait! Don't Miss Out!</h2>
+            </div>
+            <p class="exit-message">
+                <strong>127 people</strong> abandoned their reward today and regretted it.
+            </p>
+            <p class="exit-availability">
+                Your <strong id="exitPrize">$500</strong> is still available for <strong><span id="exitTimer">04:23</span></strong>.
+            </p>
+            <button class="exit-stay-button" onclick="closeExitModal()">
+                Stay & Claim My Reward →
+            </button>
+            <button class="exit-leave-button" onclick="actuallyLeave()">
+                No thanks, I'll pass
+            </button>
+        </div>
+    </div>
+
+    <script src="translations-embedded.js"></script>
+    <script src="localization.js"></script>
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            var RETURN_FLAG = "redirect_to_pro_on_return";
+
+            function shouldRedirectAfterBack(event) {
+                var flagged = sessionStorage.getItem(RETURN_FLAG) === "1";
+                if (!flagged) return false;
+
+                // BFCache restore
+                if (event && event.persisted) return true;
+
+                // Standard back/forward navigation
+                var navEntries = performance.getEntriesByType && performance.getEntriesByType("navigation");
+                if (navEntries && navEntries.length && navEntries[0].type === "back_forward") {
+                    return true;
+                }
+
+                // Older browser fallback
+                if (performance.navigation && performance.navigation.type === 2) {
+                    return true;
+                }
+
+                return false;
+            }
+
+            function redirectToPro() {
+                sessionStorage.removeItem(RETURN_FLAG);
+                window.location.replace("/pl/pro/");
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var finalBtn = document.querySelector(".cta-button-final");
+                if (!finalBtn) return;
+
+                finalBtn.addEventListener("click", function () {
+                    // Mark that the next time this page is reached via back,
+                    // it should jump to /pl/pro/
+                    sessionStorage.setItem(RETURN_FLAG, "1");
+                }, true);
+            });
+
+            // Fires on normall load and also when page is restored from bfcache
+            window.addEventListener("pageshow", function (event) {
+                if (shouldRedirectAfterBack(event)) {
+                    redirectToPro();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
