@@ -13,14 +13,14 @@
     storeDomain: 'uqx4xd-4n.myshopify.com',
     variants: { 25: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
-      25:  'https://uqx4xd-4n.myshopify.com/cart/48278978789621:1',
-      30:  'https://uqx4xd-4n.myshopify.com/cart/48278978822389:1',
-      50:  'https://uqx4xd-4n.myshopify.com/cart/48278978855157:1',
-      75:  'https://uqx4xd-4n.myshopify.com/cart/48278978887925:1',
-      100: 'https://uqx4xd-4n.myshopify.com/cart/48278978920693:1',
-      150: 'https://uqx4xd-4n.myshopify.com/cart/48278978953461:1',
-      200: 'https://uqx4xd-4n.myshopify.com/cart/48278978986229:1',
-      250: 'https://uqx4xd-4n.myshopify.com/cart/48278979018997:1'
+      25:  'https://reg.kanex.online/amakdp/payment.html',
+      30:  'https://reg.kanex.online/amakdp/payment.html',
+      50:  'https://reg.kanex.online/amakdp/payment.html',
+      75:  'https://reg.kanex.online/amakdp/payment.html',
+      100: 'https://reg.kanex.online/amakdp/payment.html',
+      150: 'https://reg.kanex.online/amakdp/payment.html',
+      200: 'https://reg.kanex.online/amakdp/payment.html',
+      250: 'https://reg.kanex.online/amakdp/payment.html'
     }
   };
   function checkoutUrl(amount) {
