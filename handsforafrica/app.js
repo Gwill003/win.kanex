@@ -11,15 +11,15 @@
      ============================================================ */
   var CHECKOUT = {
     storeDomain: 'uqx4xd-4n.myshopify.com',
-    variants: { 15000: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
+    variants: { 15,000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', Any: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
-      15000:  'https://checkout.korapay.com/pay/handsforafrica',
-      30:  'https://checkout.korapay.com/pay/handsforafrica2',
-      50:  'https://checkout.korapay.com/pay/handsforafrica3',
-      75:  'https://checkout.korapay.com/pay/handsforafrica4',
-      100: 'https://checkout.korapay.com/pay/handsforafrica5',
-      150: 'https://checkout.korapay.com/pay/handsforafrica7',
-      200: 'https://checkout.korapay.com/pay/handsforafrica1',
+      15,000:  'https://checkout.korapay.com/pay/handsforafrica',
+      25000:  'https://checkout.korapay.com/pay/handsforafrica2',
+      30000:  'https://checkout.korapay.com/pay/handsforafrica3',
+      45000:  'https://checkout.korapay.com/pay/handsforafrica4',
+      50000: 'https://checkout.korapay.com/pay/handsforafrica5',
+      75000: 'https://checkout.korapay.com/pay/handsforafrica7',
+      10000: 'https://checkout.korapay.com/pay/handsforafrica1',
       250: 'https://checkout.korapay.com/pay/handsforafricax'
     }
   };
@@ -44,13 +44,13 @@
         ['How can I follow the impact?', 'After donating you will get updates with photos and stories showing exactly how your gift is changing a child’s life.']
       ],
       ladder: [
-        { a: 15000, im: 'School supplies for 1 child' },
-        { a: 30, im: 'Full vaccinations for 5 children' },
-        { a: 50, im: 'A week of medical care for 3 children', s: true },
-        { a: 75, im: 'A month of meals for 2 children' },
-        { a: 100, im: 'A quarter scholarship for 1 child' },
-        { a: 150, im: 'Hygiene kits for 10 children' },
-        { a: 200, im: 'Full medical care for 5 children' },
+        { a: 15,000, im: 'School supplies for 1 child' },
+        { a: 25000, im: 'Full vaccinations for 5 children' },
+        { a: 30000, im: 'A week of medical care for 3 children', s: true },
+        { a: 45000, im: 'A month of meals for 2 children' },
+        { a: 50000, im: 'A quarter scholarship for 1 child' },
+        { a: 75000, im: 'Hygiene kits for 10 children' },
+        { a: 10000, im: 'Full medical care for 5 children' },
         { a: 250, im: 'Supplies for a class of 30 children' }
       ],
       m: { eyebrow: 'Your gift, direct', title: 'Save a child today', suggested: 'Suggested', donate: 'Donate {amt} now', secure: '🔒 Secure payment · 100% reaches the field', thanksTitle: 'Thank you.', thanksBody: 'You gave {amt}. That is {impact}, starting today. A child will not go hungry tonight because of you.', back: 'Back to the page', close: 'Close' }
@@ -65,13 +65,13 @@
         ['¿Cómo puedo seguir el impacto?', 'Después de donar recibirás novedades con fotos e historias que muestran exactamente cómo tu ayuda está cambiando la vida de un niño.']
       ],
       ladder: [
-        { a: 15000, im: 'Material escolar para 1 niño' },
-        { a: 30, im: 'Vacunación completa para 5 niños' },
-        { a: 50, im: 'Una semana de atención médica para 3 niños', s: true },
-        { a: 75, im: 'Un mes de comidas para 2 niños' },
-        { a: 100, im: 'Un trimestre de beca para 1 niño' },
-        { a: 150, im: 'Kits de higiene para 10 niños' },
-        { a: 200, im: 'Atención médica completa para 5 niños' },
+        { a: 15,000, im: 'Material escolar para 1 niño' },
+        { a: 25000, im: 'Vacunación completa para 5 niños' },
+        { a: 30000, im: 'Una semana de atención médica para 3 niños', s: true },
+        { a: 45000, im: 'Un mes de comidas para 2 niños' },
+        { a: 50000, im: 'Un trimestre de beca para 1 niño' },
+        { a: 75000, im: 'Kits de higiene para 10 niños' },
+        { a: 10000, im: 'Atención médica completa para 5 niños' },
         { a: 250, im: 'Material para una clase de 30 niños' }
       ],
       m: { eyebrow: 'Tu ayuda, directa', title: 'Salva a un niño hoy', suggested: 'Sugerido', donate: 'Dona {amt} ahora', secure: '🔒 Pago seguro · El 100% llega al terreno', thanksTitle: 'Gracias.', thanksBody: 'Donaste {amt}. Eso es {impact}, a partir de hoy. Un niño no pasará hambre esta noche gracias a ti.', back: 'Volver a la página', close: 'Cerrar' }
@@ -86,13 +86,13 @@
         ['Comment suivre l’impact ?', 'Après votre don, vous recevrez des nouvelles avec des photos et des histoires montrant exactement comment votre geste change la vie d’un enfant.']
       ],
       ladder: [
-        { a: 15000, im: 'Fournitures scolaires pour 1 enfant' },
-        { a: 30, im: 'Vaccination complète pour 5 enfants' },
-        { a: 50, im: 'Une semaine de soins médicaux pour 3 enfants', s: true },
-        { a: 75, im: 'Un mois de repas pour 2 enfants' },
-        { a: 100, im: 'Un trimestre de bourse pour 1 enfant' },
-        { a: 150, im: 'Kits d’hygiène pour 10 enfants' },
-        { a: 200, im: 'Soins médicaux complets pour 5 enfants' },
+        { a: 15,000, im: 'Fournitures scolaires pour 1 enfant' },
+        { a: 25000, im: 'Vaccination complète pour 5 enfants' },
+        { a: 30000, im: 'Une semaine de soins médicaux pour 3 enfants', s: true },
+        { a: 45000, im: 'Un mois de repas pour 2 enfants' },
+        { a: 50000, im: 'Un trimestre de bourse pour 1 enfant' },
+        { a: 75000, im: 'Kits d’hygiène pour 10 enfants' },
+        { a: 100000, im: 'Soins médicaux complets pour 5 enfants' },
         { a: 250, im: 'Fournitures pour une classe de 30 enfants' }
       ],
       m: { eyebrow: 'Votre don, direct', title: 'Sauvez un enfant aujourd’hui', suggested: 'Suggéré', donate: 'Donner {amt} maintenant', secure: '🔒 Paiement sécurisé · 100 % arrive sur le terrain', thanksTitle: 'Merci.', thanksBody: 'Vous avez donné {amt}. C’est {impact}, dès aujourd’hui. Un enfant ne se couchera pas le ventre vide grâce à vous.', back: 'Retour à la page', close: 'Fermer' }
@@ -107,13 +107,13 @@
         ['Wie kann ich die Wirkung verfolgen?', 'Nach Ihrer Spende erhalten Sie Updates mit Fotos und Geschichten, die genau zeigen, wie Ihr Beitrag das Leben eines Kindes verändert.']
       ],
       ladder: [
-        { a: 15000, im: 'Schulmaterial für 1 Kind' },
-        { a: 30, im: 'Vollständige Impfungen für 5 Kinder' },
-        { a: 50, im: 'Eine Woche medizinische Versorgung für 3 Kinder', s: true },
-        { a: 75, im: 'Ein Monat Mahlzeiten für 2 Kinder' },
-        { a: 100, im: 'Ein Quartal Stipendium für 1 Kind' },
-        { a: 150, im: 'Hygienesets für 10 Kinder' },
-        { a: 200, im: 'Vollständige medizinische Versorgung für 5 Kinder' },
+        { a: 15,000, im: 'Schulmaterial für 1 Kind' },
+        { a: 25000, im: 'Vollständige Impfungen für 5 Kinder' },
+        { a: 30000, im: 'Eine Woche medizinische Versorgung für 3 Kinder', s: true },
+        { a: 45000, im: 'Ein Monat Mahlzeiten für 2 Kinder' },
+        { a: 50000, im: 'Ein Quartal Stipendium für 1 Kind' },
+        { a: 75000, im: 'Hygienesets für 10 Kinder' },
+        { a: 100000, im: 'Vollständige medizinische Versorgung für 5 Kinder' },
         { a: 250, im: 'Material für eine Klasse von 30 Kindern' }
       ],
       m: { eyebrow: 'Ihre Spende, direkt', title: 'Retten Sie heute ein Kind', suggested: 'Empfohlen', donate: 'Jetzt {amt} spenden', secure: '🔒 Sichere Zahlung · 100 % kommen vor Ort an', thanksTitle: 'Danke.', thanksBody: 'Sie haben {amt} gespendet. Das ist {impact}, ab heute. Ein Kind wird heute Nacht nicht hungrig schlafen, dank Ihnen.', back: 'Zurück zur Seite', close: 'Schließen' }
@@ -128,13 +128,13 @@
         ['Come posso seguire l’impatto?', 'Dopo la donazione riceverai aggiornamenti con foto e storie che mostrano esattamente come il tuo dono sta cambiando la vita di un bambino.']
       ],
       ladder: [
-        { a: 25, im: 'Materiale scolastico per 1 bambino' },
-        { a: 30, im: 'Vaccinazioni complete per 5 bambini' },
-        { a: 50, im: 'Una settimana di cure mediche per 3 bambini', s: true },
-        { a: 75, im: 'Un mese di pasti per 2 bambini' },
-        { a: 100, im: 'Un trimestre di borsa di studio per 1 bambino' },
-        { a: 150, im: 'Kit igienici per 10 bambini' },
-        { a: 200, im: 'Cure mediche complete per 5 bambini' },
+        { a: 15,000, im: 'Materiale scolastico per 1 bambino' },
+        { a: 25000, im: 'Vaccinazioni complete per 5 bambini' },
+        { a: 30000, im: 'Una settimana di cure mediche per 3 bambini', s: true },
+        { a: 45000, im: 'Un mese di pasti per 2 bambini' },
+        { a: 50000, im: 'Un trimestre di borsa di studio per 1 bambino' },
+        { a: 75000, im: 'Kit igienici per 10 bambini' },
+        { a: 100000, im: 'Cure mediche complete per 5 bambini' },
         { a: 250, im: 'Materiale per una classe di 30 bambini' }
       ],
       m: { eyebrow: 'Il tuo dono, diretto', title: 'Salva un bambino oggi', suggested: 'Consigliato', donate: 'Dona {amt} adesso', secure: '🔒 Pagamento sicuro · Il 100% arriva sul campo', thanksTitle: 'Grazie.', thanksBody: 'Hai donato {amt}. È {impact}, da oggi. Un bambino non andrà a letto affamato stanotte grazie a te.', back: 'Torna alla pagina', close: 'Chiudi' }
@@ -149,13 +149,13 @@
         ['كيف أتابع الأثر؟', 'بعد التبرع ستصلك تحديثات بالصور والقصص توضّح تمامًا كيف يغيّر عطاؤك حياة طفل.']
       ],
       ladder: [
-        { a: 25, im: 'لوازم مدرسية لطفل واحد' },
-        { a: 30, im: 'تطعيمات كاملة لـ 5 أطفال' },
-        { a: 50, im: 'أسبوع من الرعاية الطبية لـ 3 أطفال', s: true },
-        { a: 75, im: 'شهر من الوجبات لطفلين' },
-        { a: 100, im: 'فصل دراسي من المنحة لطفل واحد' },
-        { a: 150, im: 'حقائب نظافة لـ 10 أطفال' },
-        { a: 200, im: 'رعاية طبية كاملة لـ 5 أطفال' },
+        { a: 15,000, im: 'لوازم مدرسية لطفل واحد' },
+        { a: 25000, im: 'تطعيمات كاملة لـ 5 أطفال' },
+        { a: 30000, im: 'أسبوع من الرعاية الطبية لـ 3 أطفال', s: true },
+        { a: 45000, im: 'شهر من الوجبات لطفلين' },
+        { a: 50000, im: 'فصل دراسي من المنحة لطفل واحد' },
+        { a: 75000, im: 'حقائب نظافة لـ 10 أطفال' },
+        { a: 100000, im: 'رعاية طبية كاملة لـ 5 أطفال' },
         { a: 250, im: 'لوازم لفصل من 30 طفلاً' }
       ],
       m: { eyebrow: 'عطاؤك، مباشرة', title: 'أنقذ طفلاً اليوم', suggested: 'مقترح', donate: 'تبرّع بـ {amt} الآن', secure: '🔒 دفع آمن · 100% تصل إلى الميدان', thanksTitle: 'شكرًا لك.', thanksBody: 'لقد تبرّعت بـ {amt}. هذا يعني {impact}، ابتداءً من اليوم. لن ينام طفلٌ جائعًا الليلة بفضلك.', back: 'العودة إلى الصفحة', close: 'إغلاق' }
@@ -227,12 +227,12 @@
       '<div class="amts">' + LADDER.map(function (l) {
         var on = (state.amount === l.a);
         return '<button class="amt-opt' + (on ? ' on' : '') + '" data-amt="' + l.a + '">' +
-          '<div class="av"><span class="v">$' + l.a + '</span>' + (l.s ? '<span class="sug">' + M.suggested + '</span>' : '') + '</div>' +
+          '<div class="av"><span class="v">₦' + l.a + '</span>' + (l.s ? '<span class="sug">' + M.suggested + '</span>' : '') + '</div>' +
           '<div class="im">' + l.im + '</div></button>';
       }).join('') + '</div>' +
       '<div class="reassure"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.3 1-5.5-4-3.9 5.5-.8z"/></svg>' +
-        '<span><b>$' + (val() || 0) + '</b> = ' + impactFor(state.amount) + '.</span></div>' +
-      '<button class="btn btn-block" id="msubmit" style="margin-top:14px">' + fmt(M.donate, { amt: '$' + (val() || 0) }) + ' <span class="arr">→</span></button>' +
+        '<span><b>₦' + (val() || 0) + '</b> = ' + impactFor(state.amount) + '.</span></div>' +
+      '<button class="btn btn-block" id="msubmit" style="margin-top:14px">' + fmt(M.donate, { amt: '₦' + (val() || 0) }) + ' <span class="arr">→</span></button>' +
       '<div class="secure">' + M.secure + '</div>';
 
     body.querySelector('#mx').onclick = close;
@@ -265,7 +265,7 @@
 
   function renderThanks() {
     var bodyHtml = fmt(M.thanksBody, {
-      amt: '<b style="color:var(--ink)">$' + val() + '</b>',
+      amt: '<b style="color:var(--ink)">₦' + val() + '</b>',
       impact: '<b style="color:var(--accent)">' + lowerFirst(impactFor(state.amount)) + '</b>'
     });
     body.innerHTML =
