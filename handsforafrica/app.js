@@ -208,7 +208,7 @@
   /* ---------- Donate modal ---------- */
   var LADDER = T.ladder;
   var M = T.m;
-  var state = { amount: 50 };
+  var state = { amount: 30000 };
   var overlay = document.getElementById('donateModal');
   var body = document.getElementById('modalBody');
   var lastFocus = null;
