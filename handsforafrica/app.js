@@ -11,7 +11,7 @@
      ============================================================ */
   var CHECKOUT = {
     storeDomain: 'uqx4xd-4n.myshopify.com',
-    variants: { 15000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', 1000+: '' },
+    variants: { 15000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', Other: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
       15000:  'https://checkout.korapay.com/pay/handsforafrica',
       25000:  'https://checkout.korapay.com/pay/handsforafrica2',
@@ -20,7 +20,7 @@
       50000: 'https://checkout.korapay.com/pay/handsforafrica5',
       75000: 'https://checkout.korapay.com/pay/handsforafrica7',
       100000: 'https://checkout.korapay.com/pay/handsforafrica1',
-      1000+: 'https://checkout.korapay.com/pay/handsforafricax'
+      Other: 'https://checkout.korapay.com/pay/handsforafricax'
     }
   };
   function checkoutUrl(amount) {
@@ -51,7 +51,7 @@
         { a: 50000, im: 'A quarter scholarship for 1 child' },
         { a: 75000, im: 'Hygiene kits for 10 children' },
         { a: 100000, im: 'Full medical care for 5 children' },
-        { a: 1000+, im: 'Supplies for a class of 30 children' }
+        { a: Other, im: 'Supplies for a class of 30 children' }
       ],
       m: { eyebrow: 'Your gift, direct', title: 'Save a child today', suggested: 'Suggested', donate: 'Donate {amt} now', secure: '🔒 Secure payment · 100% reaches the field', thanksTitle: 'Thank you.', thanksBody: 'You gave {amt}. That is {impact}, starting today. A child will not go hungry tonight because of you.', back: 'Back to the page', close: 'Close' }
     },
@@ -72,7 +72,7 @@
         { a: 50000, im: 'Un trimestre de beca para 1 niño' },
         { a: 75000, im: 'Kits de higiene para 10 niños' },
         { a: 100000, im: 'Atención médica completa para 5 niños' },
-        { a: 1000+, im: 'Material para una clase de 30 niños' }
+        { a: Other, im: 'Material para una clase de 30 niños' }
       ],
       m: { eyebrow: 'Tu ayuda, directa', title: 'Salva a un niño hoy', suggested: 'Sugerido', donate: 'Dona {amt} ahora', secure: '🔒 Pago seguro · El 100% llega al terreno', thanksTitle: 'Gracias.', thanksBody: 'Donaste {amt}. Eso es {impact}, a partir de hoy. Un niño no pasará hambre esta noche gracias a ti.', back: 'Volver a la página', close: 'Cerrar' }
     },
