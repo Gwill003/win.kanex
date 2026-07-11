@@ -20,7 +20,7 @@
       50000: 'https://checkout.korapay.com/pay/handsforafrica5',
       75000: 'https://checkout.korapay.com/pay/handsforafrica7',
       100000: 'https://checkout.korapay.com/pay/handsforafrica1',
-      000: 'https://checkout.korapay.com/pay/handsforafricax'
+      0.00: 'https://checkout.korapay.com/pay/handsforafricax'
     }
   };
   function checkoutUrl(amount) {
@@ -51,7 +51,7 @@
         { a: 50000, im: 'A quarter scholarship for 1 child' },
         { a: 75000, im: 'Hygiene kits for 10 children' },
         { a: 100000, im: 'Full medical care for 5 children' },
-        { a: 000, im: 'Here, you'll have to manually enter any amount of your choice.' }
+        { a: 0.00, im: 'Here, you'll have to manually enter any amount of your choice.' }
       ],
       m: { eyebrow: 'Your gift, direct', title: 'Save a child today', suggested: 'Suggested', donate: 'Donate {amt} now', secure: '🔒 Secure payment · 100% reaches the field', thanksTitle: 'Thank you.', thanksBody: 'You gave {amt}. That is {impact}, starting today. A child will not go hungry tonight because of you.', back: 'Back to the page', close: 'Close' }
     },
@@ -72,7 +72,7 @@
         { a: 50000, im: 'Un trimestre de beca para 1 niño' },
         { a: 75000, im: 'Kits de higiene para 10 niños' },
         { a: 100000, im: 'Atención médica completa para 5 niños' },
-        { a: 000, im: 'Material para una clase de 30 niños' }
+        { a: 0.00, im: 'Material para una clase de 30 niños' }
       ],
       m: { eyebrow: 'Tu ayuda, directa', title: 'Salva a un niño hoy', suggested: 'Sugerido', donate: 'Dona {amt} ahora', secure: '🔒 Pago seguro · El 100% llega al terreno', thanksTitle: 'Gracias.', thanksBody: 'Donaste {amt}. Eso es {impact}, a partir de hoy. Un niño no pasará hambre esta noche gracias a ti.', back: 'Volver a la página', close: 'Cerrar' }
     },
@@ -93,7 +93,7 @@
         { a: 50000, im: 'Un trimestre de bourse pour 1 enfant' },
         { a: 75000, im: 'Kits d’hygiène pour 10 enfants' },
         { a: 100000, im: 'Soins médicaux complets pour 5 enfants' },
-        { a: 000, im: 'Fournitures pour une classe de 30 enfants' }
+        { a: 0.00, im: 'Fournitures pour une classe de 30 enfants' }
       ],
       m: { eyebrow: 'Votre don, direct', title: 'Sauvez un enfant aujourd’hui', suggested: 'Suggéré', donate: 'Donner {amt} maintenant', secure: '🔒 Paiement sécurisé · 100 % arrive sur le terrain', thanksTitle: 'Merci.', thanksBody: 'Vous avez donné {amt}. C’est {impact}, dès aujourd’hui. Un enfant ne se couchera pas le ventre vide grâce à vous.', back: 'Retour à la page', close: 'Fermer' }
     },
@@ -114,7 +114,7 @@
         { a: 50000, im: 'Ein Quartal Stipendium für 1 Kind' },
         { a: 75000, im: 'Hygienesets für 10 Kinder' },
         { a: 100000, im: 'Vollständige medizinische Versorgung für 5 Kinder' },
-        { a: 000, im: 'Material für eine Klasse von 30 Kindern' }
+        { a: 0.00, im: 'Material für eine Klasse von 30 Kindern' }
       ],
       m: { eyebrow: 'Ihre Spende, direkt', title: 'Retten Sie heute ein Kind', suggested: 'Empfohlen', donate: 'Jetzt {amt} spenden', secure: '🔒 Sichere Zahlung · 100 % kommen vor Ort an', thanksTitle: 'Danke.', thanksBody: 'Sie haben {amt} gespendet. Das ist {impact}, ab heute. Ein Kind wird heute Nacht nicht hungrig schlafen, dank Ihnen.', back: 'Zurück zur Seite', close: 'Schließen' }
     },
@@ -135,7 +135,7 @@
         { a: 50000, im: 'Un trimestre di borsa di studio per 1 bambino' },
         { a: 75000, im: 'Kit igienici per 10 bambini' },
         { a: 100000, im: 'Cure mediche complete per 5 bambini' },
-        { a: 000, im: 'Materiale per una classe di 30 bambini' }
+        { a: 0.00, im: 'Materiale per una classe di 30 bambini' }
       ],
       m: { eyebrow: 'Il tuo dono, diretto', title: 'Salva un bambino oggi', suggested: 'Consigliato', donate: 'Dona {amt} adesso', secure: '🔒 Pagamento sicuro · Il 100% arriva sul campo', thanksTitle: 'Grazie.', thanksBody: 'Hai donato {amt}. È {impact}, da oggi. Un bambino non andrà a letto affamato stanotte grazie a te.', back: 'Torna alla pagina', close: 'Chiudi' }
     },
@@ -156,7 +156,7 @@
         { a: 50000, im: 'فصل دراسي من المنحة لطفل واحد' },
         { a: 75000, im: 'حقائب نظافة لـ 10 أطفال' },
         { a: 100000, im: 'رعاية طبية كاملة لـ 5 أطفال' },
-        { a: 000, im: 'لوازم لفصل من 30 طفلاً' }
+        { a: 0.00, im: 'لوازم لفصل من 30 طفلاً' }
       ],
       m: { eyebrow: 'عطاؤك، مباشرة', title: 'أنقذ طفلاً اليوم', suggested: 'مقترح', donate: 'تبرّع بـ {amt} الآن', secure: '🔒 دفع آمن · 100% تصل إلى الميدان', thanksTitle: 'شكرًا لك.', thanksBody: 'لقد تبرّعت بـ {amt}. هذا يعني {impact}، ابتداءً من اليوم. لن ينام طفلٌ جائعًا الليلة بفضلك.', back: 'العودة إلى الصفحة', close: 'إغلاق' }
     }
