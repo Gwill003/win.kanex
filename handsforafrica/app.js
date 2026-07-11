@@ -13,7 +13,7 @@
     storeDomain: 'uqx4xd-4n.myshopify.com',
     variants: { 25: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
-      25:  'https://reg.kanex.online/amakdp/payment.html',
+      25:  'https://checkout.korapay.com/pay/handsforafrica',
       30:  'https://reg.kanex.online/amakdp/payment.html',
       50:  'https://reg.kanex.online/amakdp/payment.html',
       75:  'https://reg.kanex.online/amakdp/payment.html',
