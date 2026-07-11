@@ -11,7 +11,7 @@
      ============================================================ */
   var CHECKOUT = {
     storeDomain: 'uqx4xd-4n.myshopify.com',
-    variants: { 15000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', 000: '' },
+    variants: { 15000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', 0.00: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
       15000:  'https://checkout.korapay.com/pay/handsforafrica',
       25000:  'https://checkout.korapay.com/pay/handsforafrica2',
