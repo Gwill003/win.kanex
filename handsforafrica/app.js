@@ -14,13 +14,13 @@
     variants: { 25: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
       25:  'https://checkout.korapay.com/pay/handsforafrica',
-      30:  'https://reg.kanex.online/amakdp/payment.html',
-      50:  'https://reg.kanex.online/amakdp/payment.html',
-      75:  'https://reg.kanex.online/amakdp/payment.html',
-      100: 'https://reg.kanex.online/amakdp/payment.html',
-      150: 'https://reg.kanex.online/amakdp/payment.html',
-      200: 'https://reg.kanex.online/amakdp/payment.html',
-      250: 'https://reg.kanex.online/amakdp/payment.html'
+      30:  'https://checkout.korapay.com/pay/handsforafrica2',
+      50:  'https://checkout.korapay.com/pay/handsforafrica3',
+      75:  'https://checkout.korapay.com/pay/handsforafrica4',
+      100: 'https://checkout.korapay.com/pay/handsforafrica5',
+      150: 'https://checkout.korapay.com/pay/handsforafrica7',
+      200: 'https://checkout.korapay.com/pay/handsforafrica1',
+      250: 'https://checkout.korapay.com/pay/handsforafricax'
     }
   };
   function checkoutUrl(amount) {
