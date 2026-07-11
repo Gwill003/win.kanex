@@ -11,9 +11,9 @@
      ============================================================ */
   var CHECKOUT = {
     storeDomain: 'uqx4xd-4n.myshopify.com',
-    variants: { 25: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
+    variants: { 15000: '', 30: '', 50: '', 75: '', 100: '', 150: '', 200: '', 250: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
-      25:  'https://checkout.korapay.com/pay/handsforafrica',
+      15000:  'https://checkout.korapay.com/pay/handsforafrica',
       30:  'https://checkout.korapay.com/pay/handsforafrica2',
       50:  'https://checkout.korapay.com/pay/handsforafrica3',
       75:  'https://checkout.korapay.com/pay/handsforafrica4',
@@ -44,7 +44,7 @@
         ['How can I follow the impact?', 'After donating you will get updates with photos and stories showing exactly how your gift is changing a child’s life.']
       ],
       ladder: [
-        { a: 25, im: 'School supplies for 1 child' },
+        { a: 15000, im: 'School supplies for 1 child' },
         { a: 30, im: 'Full vaccinations for 5 children' },
         { a: 50, im: 'A week of medical care for 3 children', s: true },
         { a: 75, im: 'A month of meals for 2 children' },
@@ -65,7 +65,7 @@
         ['¿Cómo puedo seguir el impacto?', 'Después de donar recibirás novedades con fotos e historias que muestran exactamente cómo tu ayuda está cambiando la vida de un niño.']
       ],
       ladder: [
-        { a: 25, im: 'Material escolar para 1 niño' },
+        { a: 15000, im: 'Material escolar para 1 niño' },
         { a: 30, im: 'Vacunación completa para 5 niños' },
         { a: 50, im: 'Una semana de atención médica para 3 niños', s: true },
         { a: 75, im: 'Un mes de comidas para 2 niños' },
@@ -86,7 +86,7 @@
         ['Comment suivre l’impact ?', 'Après votre don, vous recevrez des nouvelles avec des photos et des histoires montrant exactement comment votre geste change la vie d’un enfant.']
       ],
       ladder: [
-        { a: 25, im: 'Fournitures scolaires pour 1 enfant' },
+        { a: 15000, im: 'Fournitures scolaires pour 1 enfant' },
         { a: 30, im: 'Vaccination complète pour 5 enfants' },
         { a: 50, im: 'Une semaine de soins médicaux pour 3 enfants', s: true },
         { a: 75, im: 'Un mois de repas pour 2 enfants' },
@@ -107,7 +107,7 @@
         ['Wie kann ich die Wirkung verfolgen?', 'Nach Ihrer Spende erhalten Sie Updates mit Fotos und Geschichten, die genau zeigen, wie Ihr Beitrag das Leben eines Kindes verändert.']
       ],
       ladder: [
-        { a: 25, im: 'Schulmaterial für 1 Kind' },
+        { a: 15000, im: 'Schulmaterial für 1 Kind' },
         { a: 30, im: 'Vollständige Impfungen für 5 Kinder' },
         { a: 50, im: 'Eine Woche medizinische Versorgung für 3 Kinder', s: true },
         { a: 75, im: 'Ein Monat Mahlzeiten für 2 Kinder' },
