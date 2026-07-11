@@ -51,7 +51,7 @@
         { a: 50000, im: 'A quarter scholarship for 1 child' },
         { a: 75000, im: 'Hygiene kits for 10 children' },
         { a: 100000, im: 'Full medical care for 5 children' },
-        { a: 0, im: 'Here, you'll have to manually enter any amount of your choice.' }
+        { a: 0, im: 'Here, you'll have to manually enter any amount you wish.' }
       ],
       m: { eyebrow: 'Your gift, direct', title: 'Save a child today', suggested: 'Suggested', donate: 'Donate {amt} now', secure: '🔒 Secure payment · 100% reaches the field', thanksTitle: 'Thank you.', thanksBody: 'You gave {amt}. That is {impact}, starting today. A child will not go hungry tonight because of you.', back: 'Back to the page', close: 'Close' }
     },
