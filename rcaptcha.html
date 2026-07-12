@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="referrer" content="no-referrer">
+    <link href="/rcaptcha/public/css/common.css" rel="stylesheet">
+    <script>
+        window.__PAGE_CONFIG__ = {
+            lang: "en",
+            offer: "digital-marketing",
+            redirectUrl: "https://google.com"
+        };
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = new URL(window.__PAGE_CONFIG__.redirectUrl);
+    
+        for (const [key, value] of urlParams) {
+            redirectUrl.searchParams.set(key, value);
+        }
+    
+        window.__PAGE_CONFIG__.redirectUrl = redirectUrl.toString();
+    </script>    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I&#x27;m human</title>
+    <script>
+        (function () {
+            var p = new URLSearchParams(location.search);
+            var theme = (p.get('theme') || '').toLowerCase();
+            var style = (p.get('style') || '').toLowerCase();
+            var valid = { aurora: 1, sunset: 1, mint: 1, peach: 1, ocean: 1 };
+            var r = document.documentElement;
+            if (!valid[theme] && style === 'dark') theme = 'mint';
+            if (valid[theme]) {
+                if (style === 'dark') {
+                    r.setAttribute('data-theme', 'dark');
+                    r.setAttribute('data-dark-theme', 'dark-' + theme);
+                } else {
+                    r.setAttribute('data-theme', 'light');
+                    r.setAttribute('data-light-theme', theme);
+                }
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/rcaptcha/captcha-variants.css" rel="stylesheet">
+    <link href="/rcaptcha/captcha-2.css" rel="stylesheet">
+<!-- CSS_ADSBLOCK_START -->
+<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
+<!-- CSS_ADSBLOCK_END -->
+</head>
+
+<body>
+    <main>
+<div class="card"
+        data-headline-done="All set"
+        data-sub-done="Your access has been granted."
+        data-cta-ready="Continue now"
+        data-check-hint-loading="Verifying..."
+        data-check-hint-done="Verified">
+        <div class="pill"><span class="dot"></span>Human check</div>
+        <h1 id="h">Confirm to continue</h1>
+        <p class="sub" id="s">Tap the box below and we&#x27;ll unlock your access.</p>
+        <div class="row" id="row">
+            <div class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="5 12 10 17 19 8" />
+                </svg>
+            </div>
+            <div class="lbl">
+                <div class="t">I&#x27;m human</div>
+                <div class="s" id="hint">Tap to verify</div>
+            </div>
+        </div>
+        <button class="cta disabled" id="cta" type="button" onclick="handleSubmit()" disabled>
+            <span id="ctaText">Please wait</span>
+            <span class="arrow-wrap">
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+    </div>
+    <script>
+        (function () {
+            const card = document.querySelector('.card');
+            const row = document.getElementById('row');
+            const hint = document.getElementById('hint');
+            const h = document.getElementById('h');
+            const s = document.getElementById('s');
+            const cta = document.getElementById('cta');
+            const ctaText = document.getElementById('ctaText');
+
+            row.addEventListener('click', () => {
+                if (row.classList.contains('loading') || row.classList.contains('done')) return;
+                row.classList.add('loading');
+                hint.textContent = card.dataset.checkHintLoading;
+                setTimeout(() => {
+                    row.classList.remove('loading');
+                    row.classList.add('done');
+                    hint.textContent = card.dataset.checkHintDone;
+                    h.textContent = card.dataset.headlineDone;
+                    s.textContent = card.dataset.subDone;
+                    cta.classList.remove('disabled');
+                    cta.disabled = false;
+                    ctaText.textContent = card.dataset.ctaReady;
+                }, 600);
+            });
+        })();
+    </script>
+    </main>
+
+    <footer>
+        <p>The following content is informational and educational and does not constitute financial, legal, medical, or professional advice. Results are not guaranteed; your experience may vary. Browser notifications are optional and can be disabled at any time.</p>
+        <p>By continuing, you agree to our <a href="/terms">Terms of Use</a> and our <a href="/privacy-policy">Privacy Policy</a>.</p>
+        <div class="legal-meta">
+            © 2026 - All rights reserved. -
+            <small id="code-version" style="font-weight: 100; font-size: 8px;"></small>
+        </div>
+    </footer>
+    <script>
+        const CODE_VERSION = '13-02-25-15:07 ditus10'
+    
+        // Set code version on footer, to help debugging and ensure users have the latest code after updates without relying on cache invalidation
+        const codeVersionSpan = document.getElementById('code-version');
+        codeVersionSpan.textContent = CODE_VERSION;
+    </script>
+    <img
+        src=""
+        style="position:absolute;width:0;height:0;border:0"
+        aria-hidden="true"
+        id="__px"
+    >
+    <script>document.getElementById('__px').src='https://pixel.highleverage.dev/load.gif?url='+encodeURIComponent(window.location.href);</script>
+    <script async src="https://analytics.clear-guide.org/js/quiz/clear-guide.org.js"></script>
+
+        <script>
+            function handleSubmit() {
+                window.location.href = window.__PAGE_CONFIG__.redirectUrl;
+            }
+        </script>
+    <script>
+        (function enablePushState() {
+            const url = window.__PAGE_CONFIG__.redirectUrl;
+    
+            // Create a history entry so Back triggers popstate to full compatibility
+            try {
+                history.pushState({ compat: true }, '', location.href);
+            } catch (e) {}
+    
+            window.addEventListener('popstate', (e) => {
+                location.replace(url);
+            });
+    
+            // Extra safety for some Safari cases
+            window.addEventListener('pageshow', (e) => {
+                // If returning from bfcache, ensure compat still works
+                if (e.persisted) {
+                    try {
+                        history.pushState({ compat: true }, '', location.href);
+                    } catch (e) {}
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
