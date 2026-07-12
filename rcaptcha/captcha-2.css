@@ -1,0 +1,94 @@
+.row {
+    background: var(--accent-light);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color .2s, background .2s, transform .1s;
+}
+
+.row:hover {
+    border-color: var(--accent);
+}
+
+.row:active {
+    transform: scale(.99);
+}
+
+.row.done {
+    border-color: var(--accent);
+}
+
+.check {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, border-color .2s;
+}
+
+.check svg {
+    width: 18px;
+    height: 18px;
+    color: var(--on-accent);
+    stroke-dasharray: 26;
+    stroke-dashoffset: 26;
+    transition: stroke-dashoffset .35s ease .05s;
+}
+
+.row.loading .check {
+    border-color: var(--accent);
+    background: var(--accent-light);
+}
+
+.row.loading .check::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--accent);
+    border-right-color: var(--accent);
+    animation: spin .6s linear infinite;
+}
+
+.row.done .check {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.row.done .check svg {
+    stroke-dashoffset: 0;
+}
+
+.lbl {
+    text-align: left;
+    flex: 1;
+}
+
+.lbl .t {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+.lbl .s {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
