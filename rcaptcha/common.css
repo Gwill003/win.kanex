@@ -1,0 +1,11 @@
+#url-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    cursor: pointer;
+    background: linear-gradient(to bottom, red 0px, red 10px, transparent 10px, transparent 100%);
+    display: none;
+}
