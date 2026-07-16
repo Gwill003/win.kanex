@@ -11,11 +11,11 @@
      ============================================================ */
   var CHECKOUT = {
     storeDomain: 'uqx4xd-4n.myshopify.com',
-    variants: { 15000: '', 25000: '', 30000: '', 45000: '', 50000: '', 75000: '', 100000: '', 0: '' },
+    variants: { 15000: '', 25000: '', 5000: '', 45000: '', 50000: '', 75000: '', 100000: '', 0: '' },
     urls: {                // Shopify Buy Button cart links (one variant per donation amount)
       15000:  'https://checkout.korapay.com/pay/handsforafrica',
       25000:  'https://checkout.korapay.com/pay/handsforafrica2',
-      30000:  'https://checkout.korapay.com/pay/handsforafrica3',
+      5000:  'https://checkout.korapay.com/pay/handsforafricac',
       45000:  'https://checkout.korapay.com/pay/handsforafrica4',
       50000: 'https://checkout.korapay.com/pay/handsforafrica5',
       75000: 'https://checkout.korapay.com/pay/handsforafrica7',
@@ -46,7 +46,7 @@
       ladder: [
         { a: 15000, im: 'School supplies for 1 child' },
         { a: 25000, im: 'Full vaccinations for 5 children' },
-        { a: 30000, im: 'A week of medical care for 3 children', s: true },
+        { a: 5000, im: 'A week of medical care for 3 children', s: true },
         { a: 45000, im: 'A month of meals for 2 children' },
         { a: 50000, im: 'A quarter scholarship for 1 child' },
         { a: 75000, im: 'Hygiene kits for 10 children' },
@@ -67,7 +67,7 @@
       ladder: [
         { a: 15000, im: 'Material escolar para 1 niño' },
         { a: 25000, im: 'Vacunación completa para 5 niños' },
-        { a: 30000, im: 'Una semana de atención médica para 3 niños', s: true },
+        { a: 5000, im: 'Una semana de atención médica para 3 niños', s: true },
         { a: 45000, im: 'Un mes de comidas para 2 niños' },
         { a: 50000, im: 'Un trimestre de beca para 1 niño' },
         { a: 75000, im: 'Kits de higiene para 10 niños' },
@@ -88,7 +88,7 @@
       ladder: [
         { a: 15000, im: 'Fournitures scolaires pour 1 enfant' },
         { a: 25000, im: 'Vaccination complète pour 5 enfants' },
-        { a: 30000, im: 'Une semaine de soins médicaux pour 3 enfants', s: true },
+        { a: 5000, im: 'Une semaine de soins médicaux pour 3 enfants', s: true },
         { a: 45000, im: 'Un mois de repas pour 2 enfants' },
         { a: 50000, im: 'Un trimestre de bourse pour 1 enfant' },
         { a: 75000, im: 'Kits d’hygiène pour 10 enfants' },
@@ -109,7 +109,7 @@
       ladder: [
         { a: 15000, im: 'Schulmaterial für 1 Kind' },
         { a: 25000, im: 'Vollständige Impfungen für 5 Kinder' },
-        { a: 30000, im: 'Eine Woche medizinische Versorgung für 3 Kinder', s: true },
+        { a: 5000, im: 'Eine Woche medizinische Versorgung für 3 Kinder', s: true },
         { a: 45000, im: 'Ein Monat Mahlzeiten für 2 Kinder' },
         { a: 50000, im: 'Ein Quartal Stipendium für 1 Kind' },
         { a: 75000, im: 'Hygienesets für 10 Kinder' },
@@ -130,7 +130,7 @@
       ladder: [
         { a: 15000, im: 'Materiale scolastico per 1 bambino' },
         { a: 25000, im: 'Vaccinazioni complete per 5 bambini' },
-        { a: 30000, im: 'Una settimana di cure mediche per 3 bambini', s: true },
+        { a: 5000, im: 'Una settimana di cure mediche per 3 bambini', s: true },
         { a: 45000, im: 'Un mese di pasti per 2 bambini' },
         { a: 50000, im: 'Un trimestre di borsa di studio per 1 bambino' },
         { a: 75000, im: 'Kit igienici per 10 bambini' },
@@ -151,7 +151,7 @@
       ladder: [
         { a: 15000, im: 'لوازم مدرسية لطفل واحد' },
         { a: 25000, im: 'تطعيمات كاملة لـ 5 أطفال' },
-        { a: 30000, im: 'أسبوع من الرعاية الطبية لـ 3 أطفال', s: true },
+        { a: 5000, im: 'أسبوع من الرعاية الطبية لـ 3 أطفال', s: true },
         { a: 45000, im: 'شهر من الوجبات لطفلين' },
         { a: 50000, im: 'فصل دراسي من المنحة لطفل واحد' },
         { a: 75000, im: 'حقائب نظافة لـ 10 أطفال' },
