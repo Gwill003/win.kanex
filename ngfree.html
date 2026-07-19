@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spin the Wheel and Win</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            /* ألوان مستوحاة من علم نيجيريا (الأخضر والأبيض) */
+            background: radial-gradient(circle at 50% 40%, #008751 0%, #004d2e 70%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin: 0 0 10px 0; 
+            font-weight: 900;
+            line-height: 1.2;
+            width: 100%;
+            background-image: linear-gradient(to right, #fedd00, #ffffff, #fedd00);
+            background-size: 300% auto; 
+            color: transparent; 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            animation: rainbow-move 6s linear infinite;
+            filter: drop-shadow(0 4px 2px rgba(0,0,0,0.9));
+        }
+
+        @keyframes rainbow-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .timer-box {
+            background-color: #000;
+            border: 2px solid #fedd00;
+            border-radius: 50px;
+            padding: 8px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px #fedd00;
+            width: 100%;
+            max-width: 90%;
+        }
+
+        .timer-text {
+            font-weight: bold;
+            font-size: 0.9rem;
+            font-family: monospace;
+            color: #fedd00;
+        }
+
+        .visitor-box {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .live-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 5px #00ff00;
+            animation: blink-dot 1.5s infinite;
+        }
+        @keyframes blink-dot { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .wheel-container {
+            position: relative;
+            width: 90vw;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+
+        .pointer {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 50px solid #fedd00;
+            z-index: 20;
+            filter: drop-shadow(0 3px 3px rgba(0,0,0,0.6));
+        }
+
+        .wheel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 50%;
+            transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .center-spin-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px; 
+            height: 75px;
+            background-color: #008751;
+            border: 4px solid white;
+            border-radius: 50%;
+            color: white;
+            font-weight: 900;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            z-index: 15;
+            pointer-events: none;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #fedd00;
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0.9;
+            padding-bottom: 30px;
+        }
+
+        .tap-hint {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0.5; } }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        .modal-box {
+            background: white;
+            color: black;
+            padding: 25px 20px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 0 30px #fedd00;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid #008751;
+        }
+
+        .modal-box h2 { color: #008751; margin-top: 0; font-size: 1.8rem; }
+        .modal-box p { font-size: 1.1rem; color: #333; }
+
+        .prize-image {
+            width: 150px;
+            margin: 15px auto;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .close-btn {
+            background: linear-gradient(to right, #008751, #004d2e);
+            color: white; border: none;
+            padding: 12px 30px; font-size: 1.1rem; border-radius: 50px;
+            cursor: pointer; margin-top: 15px; font-weight: bold;
+            width: 100%;
+        }
+
+        .verification-container { margin: 20px 0; text-align: left; }
+        .verify-text { font-size: 0.95rem; color: #333; font-weight: bold; display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .progress-bg { width: 100%; background-color: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden; }
+        .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #008751, #fedd00); transition: width 0.5s ease-in-out; }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: -100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 5px solid #fedd00;
+            font-size: 0.85rem;
+            z-index: 1000;
+            transition: left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 90vw;
+        }
+        .notification.show { left: 20px; }
+    </style>
+<!-- CSS_ADSBLOCK_START -->
+<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
+<!-- CSS_ADSBLOCK_END -->
+</head>
+<body>
+
+    <audio id="spinSound" src="tick.mp3" preload="auto"></audio>
+    <audio id="winSound" src="win.mp3" preload="auto"></audio>
+
+    <h1>“ SPIN THE WHEEL AND WIN ”</h1>
+
+    <div class="timer-box">
+        <span class="timer-text" id="countdown">OFFER ENDS IN: ...</span>
+    </div>
+
+    <div class="visitor-box">
+        <span class="live-dot"></span> 
+        <span id="visitor-count">245</span>&nbsp;People online now
+    </div>
+
+    <div class="tap-hint" id="tapHint">👇 CLICK TO SPIN 👇</div>
+
+    <div class="wheel-container" onclick="spinWheel()">
+        <div class="pointer"></div>
+        <img src="1.jpg" alt="Lucky Wheel" class="wheel-image" id="wheel">
+        <div class="center-spin-btn">SPIN</div>
+    </div>
+
+    <div class="footer">
+        Limited Time Offer exclusive for Nigeria
+    </div>
+
+    <div class="modal-overlay" id="winModal">
+        <div class="modal-box">
+            <div id="verification-step">
+                <div class="verification-container">
+                    <div class="verify-text">
+                        <span id="verify-status">Verifying your connection...</span>
+                        <span id="verify-percent">0%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-bar" id="verify-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="final-prize-section" style="display: none;">
+                <h2 id="congrats-title">🎉 CONGRATULATIONS! 🎉</h2>
+                <p>You won an exclusive prize for being a Nigerian user!</p>
+                <img src="iphone.png" alt="iPhone Prize" class="prize-image">
+                <p><strong>iPhone 17 Pro Max</strong></p>
+                <button class="close-btn" onclick="goToOffer()">CLAIM NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const offerUrl = "https://ok.ucanwin.site/?utm_medium=5b61c92943ee5607b2f33bbf19f02140d7f34855&utm_campaign=smartNg&np=1";
+        const stopPosition = 320; 
+        let visitors = Math.floor(Math.random() * 250) + 150;
+        document.getElementById("visitor-count").innerText = visitors;
+
+        // تحديث عدد الزوار
+        setInterval(() => {
+            visitors += Math.floor(Math.random() * 11) - 5;
+            if (visitors < 100) visitors = 100;
+            document.getElementById("visitor-count").innerText = visitors;
+        }, 3000);
+
+        // المؤقت
+        var countDownDate = new Date().getTime() + (10 * 60 * 1000); 
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = "OFFER ENDS IN: " + minutes + "m " + seconds + "s ";
+        }, 1000);
+
+        let hasSpun = false;
+        function spinWheel() {
+            if (hasSpun) return;
+            hasSpun = true;
+            document.getElementById('tapHint').style.display = 'none';
+            document.getElementById('spinSound').play().catch(e => {});
+            
+            const wheel = document.getElementById('wheel');
+            const deg = (360 * 8) + stopPosition; 
+            wheel.style.transform = `rotate(${deg}deg)`;
+            
+            setTimeout(() => { 
+                showVerificationAndWin(); 
+            }, 4000);
+        }
+
+        function showVerificationAndWin() {
+            document.getElementById('winModal').style.display = 'flex';
+            const status = document.getElementById('verify-status');
+            const bar = document.getElementById('verify-bar');
+            const percent = document.getElementById('verify-percent');
+
+            let steps = [
+                { t: "Checking Nigerian IP...", p: "35%" },
+                { t: "Checking available stock...", p: "70%" },
+                { t: "Reserving your prize...", p: "100%" }
+            ];
+
+            steps.forEach((step, i) => {
+                setTimeout(() => {
+                    status.innerText = step.t;
+                    bar.style.width = step.p;
+                    percent.innerText = step.p;
+                }, (i + 1) * 1200);
+            });
+
+            setTimeout(() => {
+                document.getElementById('verification-step').style.display = 'none';
+                document.getElementById('final-prize-section').style.display = 'block';
+                document.getElementById('winSound').play().catch(e => {});
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                
+                // ===== التعديل هنا: تحويل تلقائي بعد ثانيتين من ظهور الزر =====
+                setTimeout(() => {
+                    goToOffer();
+                }, 2000);
+                // ===============================================================
+
+            }, 4500);
+        }
+
+        function goToOffer() { window.location.href = offerUrl; }
+
+        // إشعارات الفائزين (أسماء ومدن من نيجيريا)
+        const names = ["Emeka", "Chioma", "Ibrahim", "Aisha", "Oluwaseun", "Chidi", "Ngozi", "Yusuf", "Ada", "Tunde"];
+        const cities = ["Lagos", "Abuja", "Kano", "Port Harcourt", "Ibadan", "Benin City", "Enugu", "Kaduna"];
+        
+        function showNotification() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const notif = document.createElement('div');
+            notif.className = 'notification';
+            notif.innerHTML = `<span>🎁 <strong>${name}</strong> from ${city} just won!</span>`;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.classList.add('show'), 100);
+            setTimeout(() => {
+                notif.classList.remove('show');
+                setTimeout(() => notif.remove(), 500);
+            }, 4000);
+        }
+
+        setInterval(() => { if(Math.random() > 0.4) showNotification(); }, 8000);
+    </script>
+</body>
+</html>
